@@ -14,7 +14,7 @@ public class Main {
 	 
 	 while(true){
 	 
-	 op = Integer.parseInt(JOptionPane.showInputDialog(null, "AGENDA TELEFONICA:\n\n1. Inclus„o do telefone\n2. AtualizaÁ„o de dados\n3. Exclus„o de contato\n4. Consultar por id\n5. Sair\n\nDigite a opÁ„o:"));
+	 op = Integer.parseInt(JOptionPane.showInputDialog(null, "AGENDA TELEFONICA:\n\n1. Inclus√£o do telefone\n2. Atualiza√ß√£o de dados\n3. Exclus√£o de contato\n4. Sair\n\nDigite a op√ß√£o:"));
 	 
 	 switch (op){
 	 
@@ -31,7 +31,7 @@ public class Main {
 	 x.sair();
 	 break;
 	 default:
-	 JOptionPane.showMessageDialog(null, "OP«√O INV¡LIDA!", "AVISO", 1);
+	 JOptionPane.showMessageDialog(null, "OP√á√ÉO INV√ÅLIDA!", "AVISO", 1);
 	 
 	 }
 	 
