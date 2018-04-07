@@ -10,11 +10,11 @@ Bom, nós criamos 3 classes contato, telefone e a main. A classe telefone contin
 
 O que aprendeu e sabe fazer:
 
-Aprendi a utilizar o sysout para imprimir as informações, coisa que não tinha entendido até então. Também reaprendi a utilizar o arraylist, já havia visto muita coisa no curso técnico na disciplina de POO, porém havia esquecido de muitos coisas. 
+Aprendi a utilizar o sysout para imprimir as informações, coisa que não tinha entendido até então. Também reaprendi a utilizar o arraylist, já havia visto muita coisa no curso técnico na disciplina de POO, porém havia esquecido de muitos coisas. Aleksandro me ajudou muito na parte de utilizar o sysout, sem ele não teria conseguido fazer essa parte e eu o ajudei a implementar os métodos, no final cada um teve sua contribuição para o projeto.
 
 O que tem dificuldade ainda:
 
-Ainda estou com um pouco de dificuldade com os conteúdos que não vi no técnico (toString, sysout, Exception, equals e a própria lógica para montar o projeto, pois sempre tive um pouco de dificuldade nisso.) e com o modo como o código é feito. Acontece que já havia aprendido de um jeito, aí algumas coisas embaralharam na minha mente, acontece hahah, mas espero que consiga acompanhar direitinho. 
+Ainda estou com um pouco de dificuldade com os conteúdos que não vi no técnico (toString, sysout, Exception, equals e a própria lógica para montar o projeto, pois sempre tive um pouco de dificuldade nisso.) e com o modo como o código é feito. Acontece que já havia aprendido de um jeito, aí algumas coisas embaralharam na minha mente, por isso coloquei o código um pouco mais atrasado, até pedi ajuda ao Aleksandro para o meu código ficar mais parecido com o que vamos utilizar em sala, mudei algumas coisas do antigo, em fim, no final deu certo. Espero que consiga acompanhar direitinho. 
 
 Quanto tempo levou pra fazer a atividade:
 
