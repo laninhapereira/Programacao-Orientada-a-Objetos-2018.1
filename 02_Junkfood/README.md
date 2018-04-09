@@ -8,7 +8,7 @@ Fiz com o Aleksandro e mais metade da sala hahah, deixe eu explicar melhor... eu
 
 O que aprendeu e sabe fazer:
 
-FINALMENTE APRENDI O SYSOUT! Quase não entra na minha cabeça isso, mas nas aulas em que o professor reexplicou códigos antigos e os refez conosco tudo começou a fazer sentido hahah. Também acho que já consigo utilizar as exceptions, equals e toString \o/ vamos ter certeza no próximo projeto! Espero que sim.
+FINALMENTE APRENDI O SYSOUT! Quase não entra na minha cabeça isso, mas nas aulas em que o professor reexplicou códigos antigos e os refez conosco tudo começou a fazer sentido hahah. Também acho que já consigo utilizar as exceptions, equals e toString \o/ vamos ter certeza no próximo projeto! Espero que sim. Inclusive agora procuro fazer como o professor faz, cria só uma classe (fisica) e põe as outras no mesmo documento, também estou prourando não utilizar mais o JOptionPane (a não ser que o professor peça).
 
 O que tem dificuldade ainda:
 
