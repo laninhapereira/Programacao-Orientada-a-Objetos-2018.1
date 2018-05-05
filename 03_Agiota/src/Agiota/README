@@ -12,7 +12,7 @@ No geral, foi utilizado basicamente o mesmo que já tinhamos utilizado antes, en
 
 O que tem dificuldade ainda:
 
-Dessa vez o problema foi mais lógico mesmo. Eu tive uns probleminhas na hora de criar alguns for (sobre quando colocar o 'int i = 0' ... ou colocar o 'cliente c : clientes'... mas era coisinha pouca, de raciocínio mesmo. Ahh, e o fato de essa questão não ter diagrama de classe complicou um pouco para mim. Eu não sabia muito bem quais classes criar e onde colocar cada atributo. A falta do diagrama foi o principal obstáculo para mim. Depois que os meninos me ajudaram a criar as classes direitinho, oo resto foi de boa.
+Dessa vez o problema foi mais lógico mesmo. Eu tive uns probleminhas na hora de criar alguns for (sobre quando colocar o 'int i = 0' ... ou colocar o 'cliente c : clientes'...) mas era coisinha pouca, de raciocínio mesmo. Ahh, e o fato de essa questão não ter diagrama de classe complicou um pouco para mim. Eu não sabia muito bem quais classes criar e onde colocar cada atributo. A falta do diagrama foi o principal obstáculo para mim. Depois que os meninos me ajudaram a criar as classes direitinho, oo resto foi de boa.
 
 Quanto tempo levou pra fazer a atividade:
 
