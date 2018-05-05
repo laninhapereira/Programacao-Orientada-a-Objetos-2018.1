@@ -25,7 +25,7 @@ class Cliente {
 	
 }
 
-class Sistema{
+public class Sistema{
 	public float saldo = 0;
 	public float dinheiro = 0;
 	public int id_transacao;
@@ -171,7 +171,7 @@ class Transacao {
 	
 }
 
-public class Controller {
+class Controller {
 	Sistema sis;
 	Scanner sca;
 	    
