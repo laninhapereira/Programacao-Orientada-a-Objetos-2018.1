@@ -1,11 +1,7 @@
-package Atv5Anotacoes;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
-
-
 
 class Anotacao{
 	String titulo;
@@ -14,6 +10,7 @@ class Anotacao{
 		this.titulo = titulo;
 		this.texto = texto;
 	}
+	
 	public String getTitulo() {
 		return titulo;
 	}
@@ -29,28 +26,27 @@ class Anotacao{
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
-	
+
 	public String toString() {
 		return titulo + ":" + texto;
 	}
 }
 
-
 class User implements Comparable<User>{
 	private String password;
 	private String username;
-	public Repositorio <Anotacao> notas;
+	public Repositorio <Anotacao> anotacao;
 	
-	public Repositorio<Anotacao> getNotas() {
-		return notas;
+	public Repositorio<Anotacao> getAnotacao() {
+		return anotacao;
 	}
-	public void setNotas(Repositorio<Anotacao> notas) {
-		this.notas = notas;
+	public void setAnotacao(Repositorio<Anotacao> anotacao) {
+		this.anotacao = anotacao;
 	}
 	public User(String username, String password) {
 		this.password = password;
 		this.username = username;
-		notas = new Repositorio<Anotacao>(username);
+		anotacao = new Repositorio<Anotacao> (username);
 		
 	}
 	public void setPassword(String password) {
@@ -62,13 +58,8 @@ class User implements Comparable<User>{
 	public String getUsername() {
 		return username;
 	}
-	
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	
 	public String toString() {
-		return username + ":" + password;
+		return username + " " + password;
 	}
 	public int compareTo(User o) {
 		return this.username.compareTo(o.username);
@@ -84,7 +75,7 @@ class GerenciadorDeLogin{
 		user = null;
 	}
 	
-	public void Login(String username, String senha){
+	void login(String username, String senha){
 		if(user != null)
 			throw new RuntimeException("fail: ja existe alguem logado");
 		if(!usuarios.get(username).matchPassword(senha))
@@ -92,10 +83,10 @@ class GerenciadorDeLogin{
 		this.user = usuarios.get(username);
 	}
 	
-	public void Logout(){
+	void logout(){
 		if(user == null)
 			throw new RuntimeException("fail: ninguem logado");
-		this.user = null;
+		user = null;
 	}
 	
 	public User getUser(){
@@ -107,66 +98,69 @@ class GerenciadorDeLogin{
 
 class Controller{
 	Repositorio<User> usuarios;
-	Repositorio<Anotacao> notas;
-	Scanner sca;
-	GerenciadorDeLogin ger;
-		
+	GerenciadorDeLogin gerLogin;
+	Repositorio<Anotacao> anotacao;
+	
 	public Controller() {
-		
-		sca = new Scanner(System.in);
 		usuarios = new Repositorio<User>("usuario");
-		ger = new GerenciadorDeLogin(usuarios);
-		notas = new Repositorio<Anotacao>("notas");
+		anotacao = new Repositorio<Anotacao>("anotacao");
+		gerLogin = new GerenciadorDeLogin(usuarios);
 	}
 
-	    //nossa funcao oraculo que recebe uma pergunta e retorna uma resposta
-	public String oracle(String line){
-		String ui[] = line.split(" ");
+    //nossa funcao oraculo que recebe uma pergunta e retorna uma resposta
+    public String oracle(String line){
+        String ui[] = line.split(" ");
 
-	    if(ui[0].equals("help"))
-	    	return "add_user, login_user, show_user, add_anotacao, show_anotacao, logout_user, att_password, rm_anotacao.";
-	    
-	    if (ui[0].equals("add_user"))
+        if(ui[0].equals("help"))
+            return "lougout, addUser _username _password, login _username _password\n" + 
+                   "showUser, addAnotacao, changePass _old _new, showUser\n" + 
+                   "rmAnotacao, showAnotacao";
+        if (ui[0].equals("addUser"))
 			usuarios.add(ui[1], new User(ui[1], ui[2]));
-	    else if(ui[0].equals("login_user"))
-	    	ger.Login(ui[1], ui[2]);
-		else if (ui[0].equals("showUsers")) {
-			String saida = "";
-			for(User us : usuarios.getAll())
-				saida += us.getUsername() + "\n";
-			return saida;
-		}
-		else if(ui[0].equals("add_anotacao")) {
+        else if(ui[0].equals("login"))
+	    	gerLogin.login(ui[1], ui[2]);
+        else if(ui[0].equals("logout"))
+        	gerLogin.logout();
+        else if(ui[0].equals("showUser"))
+        	return "" + gerLogin.getUser();
+        else if(ui[0].equals("changePass")) {
+        	User user = gerLogin.getUser();
+        	if(user.matchPassword(ui[1]))
+        		user.setPassword(ui[2]);
+        }
+        else if(ui[0].equals("addAnotacao")) {
 		    String texto = " ";
 		    for(int i = 2 ; i<ui.length; i++)
 		    	texto += ui[i] + "";
-		    ger.getUser().notas.add(ui[1], new Anotacao(ui[1],texto)); 	
+		    gerLogin.getUser().anotacao.add(ui[1], new Anotacao(ui[1],texto)); 	
 		}
-		else if (ui[0].equals("att_password")) {
-			if (ger.getUser().matchPassword(ui[1]))
-				ger.getUser().setPassword(ui[2]);
-		}
-		else if(ui[0].equals("show_anotacao")) {
-			String saida = " ";
-		for(User u : usuarios.getAll())
-				saida += u.getNotas() + "\n";
-			return saida;
-			}
-	    else if(ui[0].equals("logout_user"))
-	    	ger.Logout();
-	    else if(ui[0].equals("rm_anotacao"))
-			ger.getUser().notas.remove(ui[1]);
-	    else
-	    	return "comando invalido";
-	        	return "done";
-	    }
-	}
+        else if(ui[0].equals("rmAnotacao"))
+			gerLogin.getUser().anotacao.remove(ui[1]);
+        else if(ui[0].equals("rmAccount")) {
+        	String nome = gerLogin.getUser().getUsername();
+        	usuarios.remove(nome);
+        	gerLogin.logout();
+        }
+        
+        else if(ui[0].equals("showAnotacao")) {
+        	ArrayList<User> users = usuarios.getAll();
+        	String saida = " ";
+        	for(User user : users)
+        		saida += user.getUsername() + " " + user.getAnotacao() + "\n";
+        	return saida;
+        }
+
+        else
+            return "comando invalido";
+        return "done";
+    }
+}
 
 public class UI {
     //cria um objeto scan para ler strings do teclado
     static Scanner scan = new Scanner(System.in);
     
-    //aplica um tab e retorna o texto tabulado com dois espaÁos
+    //aplica um tab e retorna o texto tabulado com dois espa√ßos
     static private String tab(String text){
         return "  " + String.join("\n  ", text.split("\n"));
     }
@@ -177,12 +171,12 @@ public class UI {
         while(true){
             String line = scan.nextLine();
             try {
-                //se n„o der problema, faz a pergunta e mostra a resposta
+                //se n√£o der problema, faz a pergunta e mostra a resposta
                 System.out.println(tab(cont.oracle(line)));
             }catch(Exception e) {
                 //se der problema, mostre o erro que deu
                 System.out.println(tab(e.getMessage()));
-            	}
-        	}
-    	}
-	}
+            }
+        }
+    }
+}
