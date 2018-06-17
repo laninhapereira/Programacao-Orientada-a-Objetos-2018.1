@@ -1,1 +1,24 @@
+O que você fez:
+
+Bom, comocei o código em sala com o Gabriel fazendo as clases Tweet e Tweet Generation, Gabriel fez as demais e ficamos intercalando e tentando fazer alguns métodos em sala. Conseguimos terminar o Gerador em sala mesmo, e metde das outras classes, no geral os métodos que estavam dando dificuldade. 
+
+Com quem e como fez:
+
+Com o Gabriel, porém só em sala, terminei todo o esto do código em casa sozinha. Fizemos a classe Tweet contendo deus objetos (que são muitos, então não vou listar), fizemos o construtor e os gets e sets e por fim o método mostrar likes (que diga-se de passagem, passei horas tentando resolver por que estava dando erro no getAll e advinhe qual era o erro? Tinha usado ArrayList no lugar de Repositorio. Ai deus kkkkkk); A classe User que contém os objetos username, mensagem, o contador de tweets e os repositorios de seguidores, seguidos, timeline e mytweets. temos os gets e sets, os métodos twittar (onde adcionamos os tweets feitos na lista de mytweets), dar like (temos um for onde para cada tweet na timeline se ainda não tiver daod like, e quiser, dê), mostrar seguidores (onde para cada seguidores dentro do repositorio de seus seguidores, uma variavel saida vai receber os nomes dos seus seguidores e no final os mostrará), show seguidos (que funiona da mesma forma de seguidors, só trocar por seguidos), show seguidos (também o mesmo esquema), show my tweets (mesma coisa), add tweet (onde vamos adicionar a timeline o novo tweet feito) e por fim temos o toString. 
+
+O que aprndeu e sabe fazer:
+
+Como foi utilizado basicamente o só o que haviamos feito antes, eu revisei e usei o código de Anotações pois haviam umas dúvidas e umas lógicas que eu não estaa conseguindo pensar, aí a Mary, uma amiga minha me ajudu bastante, e o Leandro também.
+
+O que tem dificuldade ainda:
+
+No momento só estou com dificuldade em diferenciar herança de interface, não consigo saber quando é melhor usar uma ou a outra sabe? E estou com dificuldade em implementá-las também. Sei que não foi pedido nesse projeto, porém, como o senhor já havia exlicado o conteúdo algumas aulas atrás, achei que seria bom que constasse aqui. E bom, nesse projeto em específico, tive uns probeinhas em montar a lógica da coisa e mais uma vvez pedi ajuda a Mary e a outros amigos, porém ainda assim não consegui entender muito bem o unread, então referi no o incluir no programa, pois havia o entendido né? Aí faltou só isso.
+
+Quanto tempo levou para fazer a atividade:
+
+Levei, ao todo, umas 8 horas. 
+
+
+
+
 
