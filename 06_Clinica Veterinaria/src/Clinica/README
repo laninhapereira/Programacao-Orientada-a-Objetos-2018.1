@@ -1,1 +1,19 @@
+O que você fez:
 
+Eu comecei a fazer junto com o Clerton em sala de aula, de inicio fiz as classes Venda e serviço e o Clerton fez as Cliente e Animal. Mas como não conseguimos terminar lá, eu acabei todas sozinha e acredito que ele também.
+
+Com quem e como você fez:
+
+Com o Clerton. Então, fiz a classe Animal contendo o id, nome, especie e dono. Contendo também o toString e o construtor; A classe Cliente contendo id, nome e repositorio de animais, os gets e sets de cada objeto e o método mostar animais (contem um for onde para cada animal no repositorio de animais, o mesmo será adicionado a string saida e ela será retornada contendo todos os animais cadastrados). Também tem o contrutor e o toString; Agora a classe venda, contendo os objetos id cliente, id servico e id animal, bem como seus gats e sets, construtor e toString; Na classe Servico temos os objetos id servico e valor, bem como seus gets e sets, construtor e toString; Por ultimo temos a classe Controller onde nós vamos mostrar os adicionar (dependendo do que o usuário digitar) o que for escolhido.  
+
+O que aprendeu e sabe fazer:
+
+No mais, apenas utilizei o que já sabia, não utilizei todas as classes que o professor especificou no diagrama, fiz menos, mas fiz exatamente tudo o que o professor pediu no projeto, de maneira mais simples. Utlizando basicamente apenas os gets e sets consegui, na classe Controller, puxar todos os dados necessários para o adicionar/cadastrar/mostrar o que era necessário. Já havia feito um trabalho exatamente desse jeito antes, também em POO, então não foi nada complicado, inclusive, o adaptei para a forma com o professor pediu, para faciliatr mais para mim.
+
+O que tem dificuldade ainda:
+
+No momento só estou com dificuldade em diferenciar herança de interface, não consigo saber quando é melhor usar uma ou a outra sabe? E estou com dificuldade em implementá-las também. Sei que não foi pedido nesse projeto, porém, como o senhor já havia exlicado o conteúdo algumas aulas atrás, achei que seria bom que constasse aqui.
+
+Quanto tempo levou pra fazer a atividade:
+
+Levei umas 5 horas de 2 dias.
