@@ -1,3 +1,5 @@
+package twitter;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -293,7 +295,7 @@ class Controller{
         String ui[] = line.split(" ");
 
         if(ui[0].equals("help"))
-            return "addUser, showusers, seguir\n" + 
+            return "adduser, showusers, seguir\n" + 
                    "twitttar, darlike, showlikes, seguidores, seguidos\n" + 
                    "timeline, mytweets, nlidos";
         else if(ui[0].equals("adduser"))
@@ -301,7 +303,7 @@ class Controller{
         else if(ui[0].equals("showusers")) {
         	String saida = "";
         	for (User user : usuarios.getAll()) 
-        		saida += user.toString() + "Segudiores " + user.showSeguidores() + "Seguidos " +user.showSeguidos() + "\n";
+        		saida += user.toString() + "\n";
         	return saida;	
         }
         else if(ui[0].equals("seguir")) {
@@ -328,10 +330,7 @@ class Controller{
 		}
         
         else if(ui[0].equals("seguidores")) {
-        	String saida = "";
-        	for(User user : usuarios.getAll())
-        		saida += user.getUsername() + "\n";
-        	return saida;
+        	System.out.println(usuarios.get(ui[1]).showSeguidores());
         }
 //
         else if(ui[0].equals("seguidos")) {
