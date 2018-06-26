@@ -3,21 +3,21 @@ import java.util.Scanner;
 
 class Tweet{
 	int id_tw;
+	int id_next = 1;
 	String username;
-	String sentimento; // é para colocar como se sente no momento, ex: com raiva, fome, etc. Assistia uma serie q tinha uma rede social assim e achei legal colocar 
+	String sentimento; // Ã© para colocar como se sente no momento, ex: com raiva, fome, etc. Assistia uma serie q tinha uma rede social assim e achei legal colocar 
 	String msg; // e aqui o pq 
 	ArrayList <String> likes;
 	private boolean isLike;
-	private boolean isLido;
 	ArrayList<String> qtdlikes;
 	User u;
 	
-	public Tweet(int idTw, User u, String sentimento, String msg) {
-		this.id_tw = idTw;
+	public Tweet(User u, String sentimento, String msg) {
+		this.id_tw = id_next;
+		id_next ++;
 		this.u = u;
 		this.sentimento = sentimento;
 		this.msg = msg;
-		this.isLido = false;
 		this.isLike = false;
 		qtdlikes = new ArrayList<String>();
 	}
@@ -49,7 +49,7 @@ class Tweet{
 		return sentimento;
 	}
 
-	public void setTitulo(String sentimento) {
+	public void setSentimento(String sentimento) {
 		this.sentimento = sentimento;
 	}
 
@@ -75,14 +75,6 @@ class Tweet{
 
 	public void setLike(boolean isLike) {
 		this.isLike = isLike;
-	}
-
-	public boolean isLido() {
-		return isLido;
-	}
-
-	public void setLido(boolean isLido) {
-		this.isLido = isLido;
 	}
 
 	public ArrayList<String> getQtdlikes() {
@@ -118,6 +110,8 @@ class User{
 	private Repositorio<Tweet> timeline;
 	Tweet msg;
 	int countTw = 0;
+	int contnlido = 0;
+	ArrayList<Tweet> nlidos;
  	
 	public User(String username) {
 		this.username = username;
@@ -125,6 +119,7 @@ class User{
 		seguidos = new Repositorio<User> ("seguidos");
 		mytweets = new Repositorio<Tweet> ("mytweets");
 		timeline = new Repositorio<Tweet> ("timeline");
+		nlidos = new ArrayList<Tweet>();
 	}
 
 	public String getUsername() {
@@ -166,6 +161,15 @@ class User{
 	public void setTimeline(Repositorio<Tweet> timeline) {
 		this.timeline = timeline;
 	}
+	
+
+	public ArrayList<Tweet> getNlidos() {
+		return nlidos;
+	}
+
+	public void setNlidos(ArrayList<Tweet> nlidos) {
+		this.nlidos = nlidos;
+	}
 
 	public void Seguir(User user) {
 		user.seguidos.add(this.getUsername(), new User(this.getUsername()));
@@ -173,7 +177,29 @@ class User{
 	}
 	
 	public void Twittar(Tweet tw) {
-		this.mytweets.add(" " + tw.getId_tw(), tw);
+		for (User u : this.getSeguidores().getAll()) {
+			this.timeline.add(" " + tw.getId_tw(), tw);
+			nlidos.add(tw);
+			contnlido ++;
+		}
+	}
+	
+	//public String lerTwittes(Tweet tw){
+		//ArrayList<Tweet> naolidos = new ArrayList<Tweet>();
+		//for(Tweet t : timeline.getAll()) {
+			
+			///}	
+		//return ;
+	//}
+	
+	public int lertwittes() {
+		//ArrayList<Tweet> nlidos = new ArrayList<Tweet>();
+		for(Tweet t : this.getNlidos()) {
+			System.out.println(t.toString());
+			nlidos.remove(t);
+			contnlido --;
+		}
+		return contnlido;
 	}
 	
 	public void DarLike(int id_tw) {
@@ -185,7 +211,7 @@ class User{
 				}
 			}
 		}
-		throw new RuntimeException("Não é possivel dar like nesse tweet");
+		throw new RuntimeException("NÃ£o Ã© possivel dar like nesse tweet");
 	}
 	
 	public String showSeguidores() {
@@ -235,7 +261,7 @@ class GeradorTwitter{
 		this.r_tw = r_tw;
 	}
 	
-	public void CriarTweet (Tweet tw){
+	public void salvarTweet (Tweet tw){
 		this.r_tw.add(""+tw.getId_tw(), tw);
 	}
 	
@@ -269,7 +295,7 @@ class Controller{
         if(ui[0].equals("help"))
             return "addUser, showusers, seguir\n" + 
                    "twitttar, darlike, showlikes, seguidores, seguidos\n" + 
-                   "timeline, mytweets";
+                   "timeline, mytweets, nlidos";
         else if(ui[0].equals("adduser"))
         	usuarios.add(ui[1], new User(ui[1]));
         else if(ui[0].equals("showusers")) {
@@ -282,16 +308,15 @@ class Controller{
         	usuarios.get(ui[2]).Seguir(usuarios.get(ui[1]));
         }
         else if(ui[0].equals("twittar")) {
-        	String texto = "";
- 	       	for(int i = 3 ; i<ui.length; i++)
- 	       		texto += ui[i] + " ";
- 	       
- 	       	for(User s : usuarios.get(ui[1]).getSeguidores().getAll()) 
- 	       		s.addTweet(new Tweet(numTw, usuarios.get(ui[1]), ui[2], texto));
-            
- 	       		usuarios.get(ui[1]).Twittar(new Tweet(numTw, usuarios.get(ui[1]), ui[2], texto));      
- 	       		ger.CriarTweet(new Tweet(numTw, usuarios.get(ui[1]), ui[2],texto));  
-            numTw++;
+        	String mensagem = "";
+        	User usuario = 	usuarios.get(ui[1]);
+        	for (int i = 3; i < ui.length; i++) {
+        		mensagem += ui[i];
+        		mensagem += " "; 
+        	}
+        	Tweet t = new Tweet (usuario, ui[2], mensagem);
+ 	       	usuario.Twittar(t);
+ 	       	
         }
         else if(ui[0].equals("darlike")) {
         	usuarios.get(ui[1]).DarLike(Integer.parseInt(ui[2]));
@@ -312,7 +337,9 @@ class Controller{
         else if(ui[0].equals("seguidos")) {
         	System.out.println(usuarios.get(ui[1]).showSeguidos());
         }
-        
+        else if(ui[0].equals("nLidos")) {
+        	usuarios.get(ui[1]).lertwittes();
+        }
         else if(ui[0].equals("timeline")) {
         	System.out.println(ger.showTweets());
         }
@@ -329,7 +356,7 @@ public class UI {
     //cria um objeto scan para ler strings do teclado
     static Scanner scan = new Scanner(System.in);
     
-    //aplica um tab e retorna o texto tabulado com dois espaços
+    //aplica um tab e retorna o texto tabulado com dois espaÃ§os
     static private String tab(String text){
         return "  " + String.join("\n  ", text.split("\n"));
     }
@@ -340,7 +367,7 @@ public class UI {
         while(true){
             String line = scan.nextLine();
             try {
-                //se não der problema, faz a pergunta e mostra a resposta
+                //se nÃ£o der problema, faz a pergunta e mostra a resposta
                 System.out.println(tab(cont.oracle(line)));
             }catch(Exception e) {
                 //se der problema, mostre o erro que deu
