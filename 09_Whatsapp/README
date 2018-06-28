@@ -1,1 +1,18 @@
+O que você fez:
 
+Fiz o código sozinha, mas contando com a ajuda do Iago (via Whatsapp) e a ajuda dos meninos da sala também.
+
+Com quem e como fez:
+
+Não tive dupla nesse projeto, pois como já havia explicado, tinha muita gente atrasada, o pessoal que estava no mesmo projeto que eu já tinham as duplas formadas, então só me deram uma forcinha quando precisei. Bom, foram criadas as classes User (onde temos os objetos id, Repositorio de grupos, Repositorio de mensagens e contador dde mensagens. Contendo também os métodos getChat, mostrar Grupos, mostrar mensagens e unread), Mensagem (contendo os objetos id, user, text e lido. Métodos: apenas toString), Chat (contando os objetos nome chat, Repositorio de users e Repositorio de mensagens. Métodos: add ao grupo, mostrar usuariios, escrever mensagem e ler mensagem) e por ultimo temos as classes Controller e UI.
+
+O que aprendeu e sabe fazer:
+
+Nesse projeto eu segui basicamente o que fiz no twitter, ficou bem parecido. Inclusive, não foi feito totalmente da forma como pede no QxCode (em questão de classes), eu tinha até tirado dúvida com o senhor e tudo, porém como pediu para nós colocarmos logo o trabalho, eu já pus aqui, sem utilizar a classe Inbox (pois eu não estou conseguindo resolver uns bugs que estão dando, e os meninos que me ajudam também não, aí deixei assim mesmo, ao menos todas as funcionalidades estão rodando.) fora a falta dessa classe, o resto está ok.
+
+O que tem dificuldade ainda:
+
+Só questão de abstração mesmo, sempre preciso pedir ajuda a alguém por que em algumas horas eu travo e não consigo entender como fazer para aquilo funcionar hahah, mas depois que recebo a ajuda parece que minha mente abre, e tudo se derenrola (o que é ótimo!).
+
+Quanto tempo levou para fazer a atividade:
+Umas 4 a 5 horas, também devido a muitos bugs que precisei de ajuda para corrigir. 
