@@ -45,7 +45,7 @@ class User{
 			if(chat.getNomechat().equals(c.getNomechat()))
 				return c;
 		
-		throw new RuntimeException("Voce n„o È membro desse grupo!");
+		throw new RuntimeException("Voce n√£o √© membro desse grupo!");
 	}
 	
 	public String mostrarGrupos() {
@@ -133,7 +133,6 @@ class Chat{
 	String nomechat;
 	Repositorio<User> users;
 	Repositorio<Mensagem> mensagens;
-	int contnlido = 0;
 	
 	public Chat(String nomechat) {
 		this.nomechat = nomechat;
@@ -282,7 +281,7 @@ public class UI {
     //cria um objeto scan para ler strings do teclado
     static Scanner scan = new Scanner(System.in);
     
-    //aplica um tab e retorna o texto tabulado com dois espaÁos
+    //aplica um tab e retorna o texto tabulado com dois espa√ßos
     static private String tab(String text){
         return "  " + String.join("\n  ", text.split("\n"));
     }
@@ -293,7 +292,7 @@ public class UI {
         while(true){
             String line = scan.nextLine();
             try {
-                //se n„o der problema, faz a pergunta e mostra a resposta
+                //se n√£o der problema, faz a pergunta e mostra a resposta
                 System.out.println(tab(cont.oracle(line)));
             }catch(Exception e) {
                 //se der problema, mostre o erro que deu
