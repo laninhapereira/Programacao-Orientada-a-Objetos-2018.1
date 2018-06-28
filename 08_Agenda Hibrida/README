@@ -1,1 +1,18 @@
+O que você fez:
 
+Basicamente fiz tudo sozinha, pedindo ajuda algumas vezes ao Iago (monitor) e o pessoal da sala.
+
+Com quem e como fez:
+
+Bom, nesse e no próximo código eu não tive uma dupla espécifica, pois os meninos que faziam dupla comigo antes estavam muito atrasados nos trabalhos, aí eu tive que seguir sozinha mesmo, contando com a ajuda de colegas e dos monitores. Foram criadas as classes Entry (contendo os objetos id e favorite), TelefoneInváido (que lança uma excessão caso o número digitado não seja coerente), Fone (onde temos o id e o número com o método validar - que olha se o número digitado é valido ou não.), Contato (que tem herança de Entry, cotendo os objetos Repositorio de fones e herda o id da classe Entry. Contém os métodos addfone, showfone e removerfone), Agenda (que contém um Repositório de entradas e de favoritos. Contém também os métodos favoritas, showfavoritos, desfavoritar e show), Master Agenda (que contém agenda, senhamestre, um repositório de contatos, um repositório de notas, repositório de senhas. Contém também os métodos addnotas, addcontatos, addpassword, mostrar senhas.), Password (que contém um objeto password), Note (contém uma nota) e por ultimo as classes Controller e UI.  
+
+O que aprendeu e sabe fazer:
+
+Nesse projeto o que aprendi que  ainda não tinha conseguido entender muito bem foi Herança, inclusive foi o método que escolhi utilizar no trabalho, depois de conseguir entender se tornou bastante trivial a utilização. No geral de novo foi isso, o resto nós já temos utilizado em outros trabalhos então se torna bem fácil de fazer.
+
+O que tem dificuldade ainda:
+
+N parte de utilizar a agregação, foi algo realmente bem mais complicado de entender (para mim) por isso escolhi utilizar herança, mesmo não sendo a melhor opção. Não sei se foi devido ao nosso pouco tempo disponível, ou se por que é mais complicado de entender mesmo mas não me senti apta a fazer a utilização do mesmo. 
+
+Quanto tempo levou para fazer a atividade:
+Acho que umas 6 horas talvez, devido as "enganchadas" que dei na parte de abstrair.
