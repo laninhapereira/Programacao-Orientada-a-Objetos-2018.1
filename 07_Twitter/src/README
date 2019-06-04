@@ -6,7 +6,7 @@ Com quem e como fez:
 
 Com o Gabriel, porém só em sala, terminei todo o esto do código em casa sozinha. Fizemos a classe Tweet contendo deus objetos (que são muitos, então não vou listar), fizemos o construtor e os gets e sets e por fim o método mostrar likes (que diga-se de passagem, passei horas tentando resolver por que estava dando erro no getAll e advinhe qual era o erro? Tinha usado ArrayList no lugar de Repositorio. Ai deus kkkkkk); A classe User que contém os objetos username, mensagem, o contador de tweets e os repositorios de seguidores, seguidos, timeline e mytweets. temos os gets e sets, os métodos twittar (onde adcionamos os tweets feitos na lista de mytweets), dar like (temos um for onde para cada tweet na timeline se ainda não tiver daod like, e quiser, dê), mostrar seguidores (onde para cada seguidores dentro do repositorio de seus seguidores, uma variavel saida vai receber os nomes dos seus seguidores e no final os mostrará), show seguidos (que funiona da mesma forma de seguidors, só trocar por seguidos), show seguidos (também o mesmo esquema), show my tweets (mesma coisa), add tweet (onde vamos adicionar a timeline o novo tweet feito) e por fim temos o toString. 
 
-O que aprndeu e sabe fazer:
+O que aprendeu e sabe fazer:
 
 Como foi utilizado basicamente o só o que haviamos feito antes, eu revisei e usei o código de Anotações pois haviam umas dúvidas e umas lógicas que eu não estava conseguindo pensar, aí a Mary, uma amiga minha me ajudu bastante, e o Leandro também.
 
