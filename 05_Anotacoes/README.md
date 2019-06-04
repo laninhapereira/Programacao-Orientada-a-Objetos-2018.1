@@ -8,7 +8,7 @@ Comecei a fazer com o Clerton em sala de aula, depois eu terminei sozinha em cas
 
 O que aprendeu e sabe fazer:
 
-Bommm, eu aprendi a utilizar repositórios, relembrei alguns ds outros comandos que o professor passsa em todos os códigos e acredito que foi basicamente isso. Fora a questão dos repositórios não houve nada de novo nessa atividade, que eu lembre no momento.
+Bommm, eu aprendi a utilizar repositórios, relembrei alguns dos outros comandos que o professor passsa em todos os códigos e acredito que foi basicamente isso. Fora a questão dos repositórios não houve nada de novo nessa atividade, que eu lembre no momento.
 
 O que tem dificuldade ainda:
 
